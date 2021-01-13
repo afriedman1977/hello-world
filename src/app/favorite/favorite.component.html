@@ -1,0 +1,11 @@
+<p>favorite works!</p>
+
+<span style="font-size: 50px;" (click)="setFavorite()"><i  class="bi" [class.bi-star]="!favorite" [class.bi-star-fill]="favorite"></i></span> <br><br>
+
+<span style="font-size: 50px;" (click)="setFavorite()"><i  class="bi" [ngClass]="{'bi-star': !favorite, 'bi-star-fill': favorite}"></i></span> <br><br>
+
+<button  class="btn" [class.btn-danger]="favorite" [class.btn-warning]="!favorite">Button</button>
+<br><br><br>
+
+<input [(ngModel)]="input"/>
+<p>{{ input | titlecasePipe }}</p>

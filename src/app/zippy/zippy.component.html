@@ -1,0 +1,17 @@
+<!-- <div class="border">
+    <div class="row" style="padding: 10px;" (click)="shippingClicked(); billingClicked()" [ngClass]="{'expanded': showDetails}">
+        <div class="col-md-11">{{ title }}</div>
+        <div class="col-md-1"><i [ngClass]="{'bi bi-chevron-double-up': !showDetails, 'bi bi-chevron-double-down': showDetails}"></i></div>
+        
+    </div>
+    <div *ngIf="showDetails">{{ content }}</div>
+</div>
+-->
+
+<div class="zippy">
+    <div (click)="shippingClicked(); billingClicked()" class="zippy-heading" [ngClass]="{'expanded': showDetails}">
+        {{ title }}
+        <span class="zippy-icon"><i [ngClass]="{'bi bi-chevron-double-up': showDetails, 'bi bi-chevron-double-down': !showDetails}"></i></span>
+    </div>
+    <div class="zippy-body" *ngIf="showDetails">{{ content }}</div>
+</div>

@@ -1,0 +1,37 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" required ngModel name="name" #name=ngModel>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">Name is required</div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Course Name</label>
+        <input required minlength="5" ngModel name="courseName" #cn="ngModel" type="text" class="form-control" [ngClass]="{'is-invalid': cn.invalid}" aria-describedby="invalidCheckCourseName" (click)="log(cn)">
+        <div *ngIf="cn.touched && cn.errors && cn.errors.required" id="invalidCheckCourseName" class="invalid-feedback">
+            You must enter a Course Name.
+        </div>
+        <div *ngIf="cn.touched && cn.errors && cn.errors.minlength" id="invalidCheckCourseName" class="invalid-feedback">
+            Your Course Name must be at least {{ cn.errors.minlength.requiredLength }} charachters your input was only {{ cn.errors.minlength.actualLength }} charachters.
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Category</label>
+        <select ngModel name="Category" #c="ngModel" class="form-control form-select" required [ngClass]="{'is-invalid': c.invalid}" aria-describedby="invalidCheckCourseCategory">
+            <option value=""></option>
+            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>
+        <div *ngIf="c.touched && c.errors && c.errors.required" id="invalidCheckCourseCategory" class="invalid-feedback">
+            You must enter a Course Category.
+        </div>
+    </div>
+    <div>
+        <div class="form-check">
+            <input ngModel name="guarantee" class="form-check-input" type="checkbox" (change)="guaranteeChanged(f)">
+            <label class="form-check-label">
+              30-day money-back guarantee
+            </label>
+          </div>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="f.pristine || f.invalid">Submit</button>
+    <div>{{ f.value | json }}</div>
+</form>

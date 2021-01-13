@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+body{
+    margin-bottom: 130px;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border: 2px solid red;
+}

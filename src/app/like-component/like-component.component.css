@@ -1,0 +1,11 @@
+span{
+    font-size: 50px;
+}
+.bi-heart-fill{
+    color: #ccc;
+    cursor: pointer;
+}
+
+.highlighted{
+    color: deeppink;
+}
