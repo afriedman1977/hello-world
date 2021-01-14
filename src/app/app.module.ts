@@ -11,6 +11,7 @@ import { TitleCasePipe } from './titlecase.pipe';
 import { LikeComponentComponent } from './like-component/like-component.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CourseFormComponent } from './course-form/course-form.component';
     TitleCasePipe,
     LikeComponentComponent,
     ZippyComponent,
-    CourseFormComponent
+    CourseFormComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
